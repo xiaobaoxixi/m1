@@ -1,19 +1,22 @@
 "use strict";
 const originalList = [];
 let currentList = [];
-// build a function object so that different functions can be called using the string passed from attr of the clicked item
-const functions = {
-  byFirstNameClicked: function byFirstNameClicked() {
-    sortByFirstName();
+// build an object of functions so that different functions can be called using the string passed from eg. the attr of the clicked element
+// in this way, less code for eventListener
+const functionsObj = {
+  byFirstName: function() {
+    currentList.sort();
     displayList(currentList);
     lineUpLeft();
   },
-  byLastNameClicked: function byLastNameClicked() {
+  byLastName: function() {
     sortByLastName();
     displayList(currentList);
     lineUpLastName();
   },
-  shuffleClicked: function shuffleClicked() {}
+  shuffle: function() {},
+  delete: function() {},
+  moreInfo: function() {}
 };
 const prototypeStudent = {
   firstName: "",
@@ -31,9 +34,9 @@ const prototypeStudent = {
     this.lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
   }
 };
-
+/////////////////
 window.addEventListener("DOMContentLoaded", getData);
-
+/////////////////
 function getData() {
   fetch("stud-list.json")
     .then(data => data.json())
@@ -50,11 +53,6 @@ function getData() {
   }
 }
 
-function sortByFirstName() {
-  currentList.sort();
-  displayList(currentList);
-}
-
 function sortByLastName() {
   currentList.sort(sortArrayLastName);
   function sortArrayLastName(a, b) {
@@ -66,7 +64,6 @@ function sortByLastName() {
       return 0;
     }
   }
-  displayList(currentList);
 }
 
 function shuffle(arr) {

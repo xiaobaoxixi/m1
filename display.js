@@ -12,15 +12,15 @@ function displayList(arr) {
   });
 }
 
-// perform the clicked function
+// listen to and perform the clicked function from the function object
 document.querySelectorAll(".function").forEach(getTrigger);
 function getTrigger(f) {
-  f.addEventListener("click", eachTrigger);
-  function eachTrigger(c) {
+  f.addEventListener("click", getEachTrigger);
+  function getEachTrigger(c) {
     let chosenFunction = c.target.classList[1].substring(
       c.target.classList[1].indexOf("-") + 1
     );
-    functions[chosenFunction + "Clicked"]();
+    functionsObj[chosenFunction]();
   }
 }
 
