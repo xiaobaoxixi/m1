@@ -41,11 +41,11 @@ button {
   height: 19vw;
   background-color: orange;
 }
-.function-first-name {
+.function-byFirstName {
   top: 40vh;
   left: 0;
 }
-.function-last-name {
+.function-byLastName {
   right: 0;
   top: 70vh;
 }

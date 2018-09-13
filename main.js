@@ -1,6 +1,20 @@
 "use strict";
 const originalList = [];
 let currentList = [];
+// build a function object so that different functions can be called using the string passed from attr of the clicked item
+const functions = {
+  byFirstNameClicked: function byFirstNameClicked() {
+    sortByFirstName();
+    displayList(currentList);
+    lineUpLeft();
+  },
+  byLastNameClicked: function byLastNameClicked() {
+    sortByLastName();
+    displayList(currentList);
+    lineUpLastName();
+  },
+  shuffleClicked: function shuffleClicked() {}
+};
 const prototypeStudent = {
   firstName: "",
   middlePart: "",
@@ -18,9 +32,8 @@ const prototypeStudent = {
   }
 };
 
-function init() {
-  getData();
-}
+window.addEventListener("DOMContentLoaded", getData);
+
 function getData() {
   fetch("stud-list.json")
     .then(data => data.json())
@@ -36,8 +49,6 @@ function getData() {
     return originalList;
   }
 }
-
-window.addEventListener("DOMContentLoaded", init);
 
 function sortByFirstName() {
   currentList.sort();
@@ -65,3 +76,7 @@ function shuffle(arr) {
   }
   console.log(indexS);
 }
+
+function getDetail() {}
+
+function deleteName() {}
