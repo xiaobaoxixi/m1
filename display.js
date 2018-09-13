@@ -24,10 +24,32 @@ function getTrigger(f) {
   }
 }
 
-// styling after changes to the list
+// show detail/delete when mouse enter
+document.addEventListener("click", checkIfNameLine);
+function checkIfNameLine(m) {
+  m.stopPropagation(); //stop event bubbling, used together with pointer-event:none and padding/margin in CSS to narrow down trigger area
+  if (m.target.tagName === "P") {
+    // clear previous underline
+    if (document.querySelector(".underlined")) {
+      document.querySelector(".underlined").classList.remove("underlined");
+      m.target.parentElement.parentElement
+        .querySelectorAll(".round")
+        .forEach(eachRound => (eachRound.style.display = "none"));
+    }
+    m.target.parentElement
+      .querySelectorAll(".round")
+      .forEach(eachRound => (eachRound.style.display = "inherit"));
+    m.target.parentElement.classList.add("underlined");
+  }
+}
+
+///////// styling after changes to the list
 
 function lineUpLeft() {
   document.querySelector(".list").style.textAlign = "left";
+  document
+    .querySelectorAll(".list p.each-name")
+    .forEach(p => (p.style.marginLeft = "3vw"));
   //first letter change
 }
 function centerAlign() {
@@ -35,6 +57,8 @@ function centerAlign() {
   //first letter change
 }
 function lineUpLastName() {
+  document.querySelector(".list").style.left = "32vw";
+
   let allLastNames = document.querySelectorAll(
     ".each-name span:nth-of-type(3)"
   );
@@ -53,4 +77,5 @@ function lineUpLastName() {
       window.innerWidth * 0.25 +
       "px"; //  add a 11px gap between last name and the names before to make the line up more apparent
   });
+  //first letter change
 }

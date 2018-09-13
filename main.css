@@ -22,18 +22,26 @@ button {
   padding: 1em 3em;
 }
 .list {
+  padding: 30px 0;
+  top: 0;
   left: 25vw;
   height: calc(100vh - 300px);
   width: 50vw;
+  height: auto;
   text-align: center;
   font-size: 2vw;
-  pointer-events: none;
   overflow-y: inherit;
 }
-
+.name-line {
+  padding: 2em 0 0 0;
+  width: 0;
+  overflow: visible;
+}
+.underlined {
+  width: 50vw;
+}
 .each-name {
-  margin: 1em 0;
-  width: 100%;
+  width: 50vw;
 }
 .function {
   position: fixed;
@@ -55,21 +63,25 @@ button {
   top: 0;
   left: 50vw;
 }
-/* .more-info {
-  width: 50vw;
-  height: 50vw;
-  border-radius: 50%;
-  background-color: green;
-  position: fixed;
-  bottom: 30vw;
-  left: -25vw;
+span {
+  pointer-events: none;
 }
-.delete {
-  width: 30vw;
-  height: 30vw;
-  border-radius: 30vw;
-  background-color: red;
-  position: fixed;
-  top: 80vw;
-  right: -15vw;
-} */
+.round {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50px;
+  background-color: darkgreen;
+  position: absolute;
+  bottom: -0.3vw;
+  display: none;
+  cursor: pointer;
+}
+.round:first-of-type {
+  right: 3vw;
+  border: 3px solid darkgreen;
+  background-color: transparent;
+}
+.round:last-of-type {
+  right: 0;
+  background-color: darkgreen;
+}
