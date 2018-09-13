@@ -3,6 +3,10 @@
   margin: 0;
   box-sizing: border-box;
   position: relative;
+  font-family: sans-serif;
+}
+body {
+  height: auto;
 }
 .func {
   position: fixed;
@@ -22,7 +26,7 @@ button {
   height: calc(100vh - 300px);
   width: 50vw;
   text-align: center;
-  font-size: 2em;
+  font-size: 2vw;
   pointer-events: none;
   overflow-y: inherit;
 }
@@ -34,7 +38,7 @@ button {
 .function {
   position: fixed;
   width: 43vw;
-  height: 30vh;
+  height: 19vw;
   background-color: orange;
 }
 .function-first-name {
@@ -46,6 +50,9 @@ button {
   top: 70vh;
 }
 .function-shuffle {
+  width: 37vw;
+  height: 12vw;
+  top: 0;
   left: 50vw;
 }
 /* .more-info {

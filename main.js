@@ -25,11 +25,11 @@ function getData() {
   fetch("stud-list.json")
     .then(data => data.json())
     .then(names => {
-      names.forEach(n => createStudObj(n));
+      names.forEach(n => buildArray(n));
       currentList = originalList;
       displayList(currentList);
     });
-  function createStudObj(eachStud) {
+  function buildArray(eachStud) {
     let studObj = Object.create(prototypeStudent);
     studObj.splitName(eachStud);
     originalList.push(studObj);
@@ -38,3 +38,30 @@ function getData() {
 }
 
 window.addEventListener("DOMContentLoaded", init);
+
+function sortByFirstName() {
+  currentList.sort();
+  displayList(currentList);
+}
+
+function sortByLastName() {
+  currentList.sort(sortArrayLastName);
+  function sortArrayLastName(a, b) {
+    if (a.lastName > b.lastName) {
+      return 1;
+    } else if (a.lastName < b.lastName) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+  displayList(currentList);
+}
+
+function shuffle(arr) {
+  let indexS = [];
+  for (let i = 0; i < arr.length; i++) {
+    indexS.push(i);
+  }
+  console.log(indexS);
+}
