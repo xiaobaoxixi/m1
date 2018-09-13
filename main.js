@@ -14,7 +14,17 @@ const functionsObj = {
     displayList(currentList);
     lineUpLastName();
   },
-  shuffle: function() {},
+  shuffle: function() {
+    let indexS = [];
+    let shuffled = [];
+    for (let i = currentList.length; i > 0; i--) {
+      let j = Math.floor(Math.random() * i);
+      shuffled.push(currentList[j]);
+      currentList.splice(j, 1);
+    }
+    currentList = shuffled;
+    displayList(currentList);
+  },
   delete: function() {},
   moreInfo: function() {}
 };
@@ -65,15 +75,3 @@ function sortByLastName() {
     }
   }
 }
-
-function shuffle(arr) {
-  let indexS = [];
-  for (let i = 0; i < arr.length; i++) {
-    indexS.push(i);
-  }
-  console.log(indexS);
-}
-
-function getDetail() {}
-
-function deleteName() {}
