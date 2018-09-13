@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.func {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  background-color: white;
+  padding-bottom: 30px;
+}
+h1 {
+  margin: 70px 1em 1em;
+}
+button {
+  padding: 1em 3em;
+}
+.list {
+  left: 25vw;
+  height: calc(100vh - 300px);
+  width: 50vw;
+  text-align: center;
+  font-size: 2em;
+  pointer-events: none;
+  overflow-y: inherit;
+}
+
+.each-name {
+  margin: 1em 0;
+  width: 100%;
+}
+.function {
+  position: fixed;
+  width: 43vw;
+  height: 30vh;
+  background-color: orange;
+}
+.function-first-name {
+  top: 40vh;
+  left: 0;
+}
+.function-last-name {
+  right: 0;
+  top: 70vh;
+}
+.function-shuffle {
+  left: 50vw;
+}
+/* .more-info {
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background-color: green;
+  position: fixed;
+  bottom: 30vw;
+  left: -25vw;
+}
+.delete {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 30vw;
+  background-color: red;
+  position: fixed;
+  top: 80vw;
+  right: -15vw;
+} */
