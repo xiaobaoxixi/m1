@@ -3,11 +3,12 @@
 // display the returned array
 function displayList(arr) {
   document.querySelector(".list").innerHTML = "";
-  arr.forEach(element => {
+  arr.forEach((element, index) => {
     let clone = document.querySelector(".name-temp").content.cloneNode(true);
     clone.querySelector("[data-firstName]").textContent = element.firstName;
     clone.querySelector("[data-middlePart]").textContent = element.middlePart;
     clone.querySelector("[data-lastName]").textContent = element.lastName;
+    clone.querySelector("[data-uid]").setAttribute("uid", element.uid);
     document.querySelector(".list").appendChild(clone);
   });
 }
@@ -16,16 +17,17 @@ function displayList(arr) {
 document.querySelectorAll(".function").forEach(getTrigger);
 function getTrigger(f) {
   f.addEventListener("click", getEachTrigger);
+
   function getEachTrigger(c) {
+    c.stopPropagation();
     let chosenFunction = c.target.classList[1].substring(
       c.target.classList[1].indexOf("-") + 1
     );
     functionsObj[chosenFunction]();
   }
 }
-
-// show detail/delete when mouse enter
-document.addEventListener("click", checkIfNameLine);
+//  detail/delete
+document.addEventListener("click", checkIfNameLine); // the delete and moreInfo button are generated with template, not available when page load, so need to listen to window
 function checkIfNameLine(m) {
   m.stopPropagation(); //stop event bubbling, used together with pointer-event:none and padding/margin in CSS to narrow down trigger area
   if (m.target.tagName === "P") {
@@ -40,6 +42,13 @@ function checkIfNameLine(m) {
       .querySelectorAll(".round")
       .forEach(eachRound => (eachRound.style.display = "inherit"));
     m.target.parentElement.classList.add("underlined");
+  }
+  // run function
+  if (m.target.classList[1]) {
+    let selectedFounction = m.target.classList[1].substring(
+      m.target.classList[1].indexOf("-") + 1
+    );
+    functionsObj[selectedFounction](m);
   }
 }
 
@@ -72,7 +81,9 @@ function lineUpLastName() {
   });
   allOtherNames.forEach(item => {
     item.style.left =
-      item.parentElement.lastChild.getBoundingClientRect().width -
+      item.parentElement.children[
+        item.parentElement.children.length - 2
+      ].getBoundingClientRect().width -
       11 -
       window.innerWidth * 0.25 +
       "px"; //  add a 11px gap between last name and the names before to make the line up more apparent

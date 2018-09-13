@@ -22,8 +22,8 @@ button {
   padding: 1em 3em;
 }
 .list {
-  padding: 30px 0;
-  top: 0;
+  padding: 0 0 70px 0;
+  top: 100px; /* leave room for trigger shuffle */
   left: 25vw;
   height: calc(100vh - 300px);
   width: 50vw;
@@ -58,10 +58,10 @@ button {
   top: 70vh;
 }
 .function-shuffle {
-  width: 37vw;
-  height: 12vw;
+  width: 31vw;
+  height: 11vw;
   top: 0;
-  left: 50vw;
+  left: 53vw;
 }
 span {
   pointer-events: none;

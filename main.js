@@ -26,13 +26,23 @@ const functionsObj = {
     centerAlign();
     displayList(currentList);
   },
-  delete: function() {},
-  moreInfo: function() {}
+  delete: function(m) {
+    let uid = m.target.previousElementSibling.lastElementChild.getAttribute(
+      "uid"
+    );
+    currentList = currentList.filter(item => item.uid !== uid);
+    m.target.parentElement.remove();
+  },
+  moreInfo: function() {
+    console.log("more");
+  }
 };
+
 const prototypeStudent = {
   firstName: "",
   middlePart: "",
   lastName: "",
+  uid: "",
   toString() {
     return `${this.firstName} ${this.middlePart} ${this.lastName}`;
   },
@@ -43,6 +53,9 @@ const prototypeStudent = {
       fullName.lastIndexOf(" ")
     );
     this.lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
+  },
+  keepUid(i) {
+    this.uid = i;
   }
 };
 /////////////////
@@ -52,13 +65,14 @@ function getData() {
   fetch("stud-list.json")
     .then(data => data.json())
     .then(names => {
-      names.forEach(n => buildArray(n));
+      names.forEach((n, index) => buildArray(n, index));
       currentList = originalList;
       displayList(currentList);
     });
-  function buildArray(eachStud) {
+  function buildArray(eachStud, i) {
     let studObj = Object.create(prototypeStudent);
     studObj.splitName(eachStud);
+    studObj.uid += i; // need string, so +
     originalList.push(studObj);
     return originalList;
   }
