@@ -23,6 +23,7 @@ const functionsObj = {
       currentList.splice(j, 1);
     }
     currentList = shuffled;
+    centerAlign();
     displayList(currentList);
   },
   delete: function() {},

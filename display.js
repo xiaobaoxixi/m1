@@ -24,11 +24,16 @@ function getTrigger(f) {
   }
 }
 
+// styling after changes to the list
+
 function lineUpLeft() {
   document.querySelector(".list").style.textAlign = "left";
   //first letter change
 }
-
+function centerAlign() {
+  document.querySelector(".list").style.textAlign = "center";
+  //first letter change
+}
 function lineUpLastName() {
   let allLastNames = document.querySelectorAll(
     ".each-name span:nth-of-type(3)"
