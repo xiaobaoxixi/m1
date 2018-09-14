@@ -26,12 +26,10 @@ button {
 .list {
   padding: calc(13vw + 10px) 0 70px 0;
   left: 20vw;
-  height: calc(100vh - 300px);
-  width: 50vw;
   height: auto;
+  width: 50vw;
   text-align: center;
   font-size: 2vw;
-  overflow-y: visible;
 }
 .name-line {
   padding: 1.1em 0 0 0;

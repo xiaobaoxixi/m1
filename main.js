@@ -7,12 +7,12 @@ const functionsObj = {
   byFirstName: function() {
     currentList.sort();
     displayList(currentList);
-    //lineUpLeft();
+    lineUpLeft();
   },
   byLastName: function() {
     sortByLastName();
     displayList(currentList);
-    //lineUpLastName();
+    lineUpLastName();
   },
   shuffle: function() {
     let indexS = [];
@@ -23,7 +23,7 @@ const functionsObj = {
       currentList.splice(j, 1);
     }
     currentList = shuffled;
-    //centerAlign();
+    centerAlign();
     displayList(currentList);
   },
   delete: function(m) {

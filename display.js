@@ -68,8 +68,6 @@ function centerAlign() {
   //first letter change
 }
 function lineUpLastName() {
-  document.querySelector(".list").style.left = "28vw";
-
   let allLastNames = document.querySelectorAll(
     ".each-name span:nth-of-type(3)"
   );
