@@ -143,3 +143,9 @@ span {
   line-height: 1.5em;
   text-align: justify;
 }
+footer {
+  font-weight: 100;
+  padding: 1em;
+  padding-left: 28vw;
+  color: lightgrey;
+}
