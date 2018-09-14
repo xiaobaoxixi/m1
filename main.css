@@ -25,7 +25,7 @@ button {
 }
 .list {
   padding: calc(13vw + 10px) 0 70px 0;
-  left: 20vw;
+  left: 25vw;
   height: auto;
   width: 50vw;
   text-align: center;
@@ -37,13 +37,10 @@ button {
   overflow: visible;
 }
 .underlined {
-  width: 55vw;
-}
-.underlined .each-name {
-  border-left: 3px solid rgba(22, 150, 90, 0.842);
+  width: auto;
 }
 .each-name {
-  width: 50vw;
+  width: 40vw;
   cursor: pointer;
   font-size: 0.7em;
   font-weight: 500;

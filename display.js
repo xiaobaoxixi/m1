@@ -65,6 +65,7 @@ function lineUpLeft() {
 }
 function centerAlign() {
   document.querySelector(".list").style.textAlign = "center";
+  document.querySelector(".list").style.paddingLeft = "0";
   //first letter change
 }
 function lineUpLastName() {
@@ -88,5 +89,6 @@ function lineUpLastName() {
       window.innerWidth * 0.24 +
       "px"; //  add a 11px gap between last name and the names before to make the line up more apparent
   });
+  document.querySelector(".list").style.paddingLeft = "10vw";
   //first letter change
 }
