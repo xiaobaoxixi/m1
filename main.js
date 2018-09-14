@@ -1,18 +1,20 @@
 "use strict";
 const originalList = [];
 let currentList = [];
-// build an object of functions so that different functions can be called using the string passed from eg. the attr of the clicked element
+// build an object of functions so that different functions can be called using the string passed from the attr of the clicked element
 // in this way, less code for eventListener
 const functionsObj = {
   byFirstName: function() {
     currentList.sort();
     displayList(currentList);
     lineUpLeft();
+    firstAppearance(1);
   },
   byLastName: function() {
     sortByLastName();
     displayList(currentList);
     lineUpLastName();
+    firstAppearance(3);
   },
   shuffle: function() {
     let indexS = [];
@@ -45,9 +47,11 @@ const functionsObj = {
     ).textContent = m.target.parentElement.querySelector(
       ".each-name"
     ).textContent;
+    document.querySelector(".first-letters").style.display = "none";
   },
   closeModal: function() {
     document.querySelector(".more-info").style.display = "none";
+    document.querySelector(".first-letters").style.display = "inherit";
   }
 };
 
@@ -71,9 +75,11 @@ const prototypeStudent = {
     this.uid = i;
   }
 };
+
 /////////////////
 window.addEventListener("DOMContentLoaded", getData);
 /////////////////
+
 function getData() {
   fetch("stud-list.json")
     .then(data => data.json())

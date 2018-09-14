@@ -27,11 +27,13 @@ function getTrigger(f) {
     functionsObj[chosenFunction]();
   }
 }
+
 //  detail/delete
 document.addEventListener("click", checkIfNameLine); // the delete and moreInfo button are generated with template, not available when page load, so need to listen to window
 function checkIfNameLine(m) {
   m.stopPropagation(); //stop event bubbling, used together with pointer-event:none and padding/margin in CSS to narrow down trigger area
-  if (m.target.tagName === "P") {
+  if (m.target.tagName === "P" && m.target.className.indexOf("each") > -1) {
+    console.log(m.target);
     // clear previous underline
     if (document.querySelector(".underlined")) {
       document.querySelector(".underlined").classList.remove("underlined");
@@ -54,19 +56,17 @@ function checkIfNameLine(m) {
 }
 
 ///////// styling after changes to the list
-
 function lineUpLeft() {
   document.querySelector(".list").style.textAlign = "left";
   document.querySelector(".list").style.paddingLeft = "3vw";
   document
     .querySelectorAll(".list p.each-name")
     .forEach(p => (p.style.marginLeft = "3vw"));
-  //first letter change
 }
 function centerAlign() {
   document.querySelector(".list").style.textAlign = "center";
   document.querySelector(".list").style.paddingLeft = "0";
-  //first letter change
+  document.querySelector(".first-letters").innerHTML = "";
 }
 function lineUpLastName() {
   let allLastNames = document.querySelectorAll(
@@ -91,4 +91,40 @@ function lineUpLastName() {
   });
   document.querySelector(".list").style.paddingLeft = "10vw";
   //first letter change
+}
+
+/////////// after sorting by first/last name, treat first letter of the first appearance of each letter
+function firstAppearance(nth) {
+  let by;
+  if (nth === 1) {
+    by = "fist name";
+    document.querySelector(".first-letters").className = "first-letters left";
+  } else {
+    by = "last name";
+    document.querySelector(".first-letters").className = "first-letters right";
+  }
+  document.querySelector(".first-letters").textContent = "";
+  let selector = `.each-name span:nth-of-type(${nth})`;
+  let allFirstNames = document.querySelectorAll(selector);
+  allFirstNames.forEach(checkIfFirst);
+  function checkIfFirst(n, index) {
+    if (index === 0) {
+      document.querySelector(
+        ".first-letters"
+      ).innerHTML += `by 1st letter of ${by}: <br><br><span class="first-l">  ${
+        n.textContent[0]
+      }</span>`;
+    } else if (n.textContent[0] !== allFirstNames[index - 1].textContent[0]) {
+      document.querySelector(
+        ".first-letters"
+      ).innerHTML += `<span class="first-l">  ${n.textContent[0]}</span>`;
+    }
+  }
+  // if (index === 0) {
+  //   clone.querySelector("span").classList.add("firstInstance");
+  // }
+  // if (index >= 1 && element.firstName[0] !== arr[index - 1].firstName[0]) {
+  //   console.log(element.firstName[0]);
+  //   clone.querySelector("span").classList.add("firstInstance");
+  // }
 }

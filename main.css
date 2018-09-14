@@ -71,7 +71,7 @@ button {
   left: 59vw;
   background-image: url(img/shuffle.png);
 }
-span {
+span:not(.first-l) {
   pointer-events: none;
 }
 .round {
@@ -144,4 +144,23 @@ footer {
   padding: 1em;
   padding-left: 28vw;
   color: lightgrey;
+}
+.first-letters {
+  z-index: 3;
+  position: fixed;
+  top: 12vw;
+  left: 30px;
+  width: 21vw;
+  font-size: 0.9em;
+  text-align: right;
+}
+.first-letters.right {
+  left: 72vw;
+  top: auto;
+  bottom: 33vw;
+  text-align: left;
+}
+.first-l {
+  cursor: pointer;
+  font-size: 1.7em;
 }
