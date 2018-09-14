@@ -84,6 +84,7 @@ span {
   bottom: -0.6vw;
   display: none;
   cursor: pointer;
+  opacity: 0.91;
 }
 .round:first-of-type {
   right: 4.3vw;
