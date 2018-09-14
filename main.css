@@ -79,7 +79,7 @@ span {
   border-radius: 50px;
   background-color: rgba(22, 150, 90, 0.842);
   position: absolute;
-  bottom: -3.7vw;
+  bottom: -0.6vw;
   display: none;
   cursor: pointer;
 }
@@ -101,4 +101,12 @@ span {
   z-index: 1;
   padding-left: 26vw;
   font-size: 1.4vw;
+}
+.delAnimation {
+  animation: del 0.5s forwards ease-out;
+}
+@keyframes del {
+  to {
+    opacity: 0;
+  }
 }

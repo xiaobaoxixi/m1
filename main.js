@@ -31,7 +31,12 @@ const functionsObj = {
       "uid"
     );
     currentList = currentList.filter(item => item.uid !== uid);
-    m.target.parentElement.remove();
+    document.querySelector(".underlined").classList.add("delAnimation");
+    document
+      .querySelector(".delAnimation")
+      .addEventListener("animationend", function() {
+        m.target.parentElement.remove();
+      });
   },
   moreInfo: function() {
     console.log("more");
