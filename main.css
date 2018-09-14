@@ -95,7 +95,7 @@ span {
 .shuffle-wrapper {
   width: 100vw;
   height: 13vw;
-  background-color: white;
+  background-image: linear-gradient(white 83%, transparent);
   position: fixed;
   top: 0;
   z-index: 1;
