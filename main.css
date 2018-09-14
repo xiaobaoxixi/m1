@@ -4,6 +4,8 @@
   box-sizing: border-box;
   position: relative;
   font-family: sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
 }
 body {
   height: auto;
@@ -46,6 +48,7 @@ button {
   width: 50vw;
   cursor: pointer;
   font-size: 0.7em;
+  font-weight: 500;
 }
 .function {
   position: fixed;
@@ -106,6 +109,7 @@ span {
   padding-left: 26vw;
   font-size: 1.4vw;
 }
+
 .delAnimation {
   animation: del 0.5s forwards ease-out;
 }
