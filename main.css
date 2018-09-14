@@ -79,20 +79,19 @@ span {
   width: 4vw;
   height: 4vw;
   border-radius: 50px;
-  background-color: rgba(22, 150, 90, 0.842);
+  background-size: contain;
   position: absolute;
   bottom: -0.6vw;
   display: none;
   cursor: pointer;
 }
 .round:first-of-type {
-  right: 4vw;
-  border: 3px solid rgba(22, 150, 90, 0.842);
-  background-color: transparent;
+  right: 4.3vw;
+  background-image: url(img/del.png);
 }
 .round:last-of-type {
   right: 0;
-  background-color: rgba(22, 150, 90, 0.842);
+  background-image: url(img/more.png);
 }
 .shuffle-wrapper {
   width: 100vw;
@@ -122,7 +121,7 @@ span {
   position: fixed;
   top: -15vh;
   left: calc(50vw - 65vh);
-  background-color: rgba(22, 150, 90, 0.99);
+  background-color: rgba(22, 150, 90, 0.988);
   padding: 20vh 5vh;
   text-align: center;
 }
