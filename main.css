@@ -18,7 +18,7 @@ body {
   padding-bottom: 30px;
 }
 h1 {
-  margin: 100px 1em 1em;
+  margin: calc(6.5vw + 7px) 1em 1em;
 }
 button {
   padding: 1em 3em;
@@ -99,7 +99,6 @@ span {
   min-height: 150px;
   background-image: linear-gradient(white 89%, transparent);
   position: fixed;
-  top: 0;
   z-index: 1;
   padding-left: 26vw;
   font-size: 1.4vw;

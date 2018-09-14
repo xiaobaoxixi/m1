@@ -57,7 +57,7 @@ function checkIfNameLine(m) {
 
 function lineUpLeft() {
   document.querySelector(".list").style.textAlign = "left";
-  document.querySelector(".list").style.paddingLeft = "6vw";
+  document.querySelector(".list").style.paddingLeft = "3vw";
   document
     .querySelectorAll(".list p.each-name")
     .forEach(p => (p.style.marginLeft = "3vw"));
