@@ -38,8 +38,16 @@ const functionsObj = {
         m.target.parentElement.remove();
       });
   },
-  moreInfo: function() {
-    console.log("more");
+  moreInfo: function(m) {
+    document.querySelector(".more-info").style.display = "inherit";
+    document.querySelector(
+      ".more-info .name"
+    ).textContent = m.target.parentElement.querySelector(
+      ".each-name"
+    ).textContent;
+  },
+  closeModal: function() {
+    document.querySelector(".more-info").style.display = "none";
   }
 };
 

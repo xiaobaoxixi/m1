@@ -113,3 +113,30 @@ span {
     opacity: 0;
   }
 }
+.more-info {
+  display: none;
+  z-index: 2;
+  width: 130vh;
+  height: 130vh;
+  border-radius: 65vh;
+  position: fixed;
+  top: -15vh;
+  left: calc(50vw - 65vh);
+  background-color: rgba(22, 150, 90, 0.99);
+  padding: 20vh 5vh;
+  text-align: center;
+}
+.more-info p {
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  position: relative;
+}
+.more-info p.text {
+  width: 70%;
+  left: 15%;
+  font-size: 1.5em;
+  margin-top: 2em;
+  line-height: 1.5em;
+  text-align: justify;
+}
