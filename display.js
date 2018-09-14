@@ -10,6 +10,7 @@ function displayList(arr) {
     clone.querySelector("[data-lastName]").textContent = element.lastName;
     clone.querySelector("[data-uid]").setAttribute("uid", element.uid);
     document.querySelector(".list").appendChild(clone);
+    document.querySelector(".list").scrollTop = 0; // always show the list from the top
   });
 }
 
