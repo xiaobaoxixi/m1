@@ -44,10 +44,12 @@ button {
 }
 .each-name {
   width: 50vw;
+  cursor: pointer;
 }
 .function {
   position: fixed;
   background-size: contain;
+  cursor: pointer;
 }
 .function-byFirstName {
   width: 23vw;
