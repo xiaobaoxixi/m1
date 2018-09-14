@@ -52,6 +52,24 @@ const functionsObj = {
   closeModal: function() {
     document.querySelector(".more-info").style.display = "none";
     document.querySelector(".first-letters").style.display = "inherit";
+  },
+  byLetter: function(m) {
+    let letter = m.target.textContent.trim();
+    let whichName = m.target.parentElement.className;
+    if (whichName.includes("left")) {
+      whichName = "firstName";
+    }
+    if (whichName.includes("right")) {
+      whichName = "lastName";
+    }
+    currentList = currentList.filter(item => item[whichName][0] === letter);
+    displayList(currentList);
+    //update the list of only visible first letters
+    if (whichName === "firstName") firstAppearance(1);
+    if (whichName === "lastName") {
+      firstAppearance(3);
+      lineUpLastName();
+    }
   }
 };
 

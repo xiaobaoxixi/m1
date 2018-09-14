@@ -90,7 +90,6 @@ function lineUpLastName() {
       "px"; //  add a 11px gap between last name and the names before to make the line up more apparent
   });
   document.querySelector(".list").style.paddingLeft = "10vw";
-  //first letter change
 }
 
 /////////// after sorting by first/last name, treat first letter of the first appearance of each letter
@@ -111,20 +110,15 @@ function firstAppearance(nth) {
     if (index === 0) {
       document.querySelector(
         ".first-letters"
-      ).innerHTML += `by 1st letter of ${by}: <br><br><span class="first-l">  ${
+      ).innerHTML += `by 1st letter of ${by}: <br><br><span class="first-l function-byLetter function">  ${
         n.textContent[0]
       }</span>`;
     } else if (n.textContent[0] !== allFirstNames[index - 1].textContent[0]) {
       document.querySelector(
         ".first-letters"
-      ).innerHTML += `<span class="first-l">  ${n.textContent[0]}</span>`;
+      ).innerHTML += `<span class="first-l function-byLetter function">  ${
+        n.textContent[0]
+      }</span>`;
     }
   }
-  // if (index === 0) {
-  //   clone.querySelector("span").classList.add("firstInstance");
-  // }
-  // if (index >= 1 && element.firstName[0] !== arr[index - 1].firstName[0]) {
-  //   console.log(element.firstName[0]);
-  //   clone.querySelector("span").classList.add("firstInstance");
-  // }
 }
