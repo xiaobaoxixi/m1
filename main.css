@@ -18,7 +18,7 @@ body {
   padding-bottom: 30px;
 }
 h1 {
-  margin: 70px 1em 1em;
+  margin: 100px 1em 1em;
 }
 button {
   padding: 1em 3em;
@@ -57,20 +57,20 @@ button {
   width: 23vw;
   height: 23vw;
   top: 40vh;
-  left: 0;
+  left: 30px;
   background-image: url(img/by-first.png);
 }
 .function-byLastName {
   width: 29vw;
   height: 29vw;
-  right: 0;
-  bottom: 0;
+  right: 30px;
+  bottom: 30px;
   background-image: url(img/by-last.png);
 }
 .function-shuffle {
   width: 13vw;
   height: 13vw;
-  top: 0;
+  top: 30px;
   left: 59vw;
   background-image: url(img/shuffle.png);
 }
