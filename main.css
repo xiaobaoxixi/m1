@@ -23,65 +23,82 @@ button {
 }
 .list {
   padding: 0 0 70px 0;
-  top: 100px; /* leave room for trigger shuffle */
-  left: 25vw;
+  left: 20vw;
   height: calc(100vh - 300px);
   width: 50vw;
   height: auto;
   text-align: center;
   font-size: 2vw;
-  overflow-y: inherit;
+  overflow-y: visible;
 }
 .name-line {
-  padding: 2em 0 0 0;
+  padding: 1.5em 0 0 0;
   width: 0;
   overflow: visible;
 }
 .underlined {
-  width: 50vw;
+  width: 55vw;
+}
+.underlined .each-name {
+  border-left: 3px solid rgba(22, 150, 90, 0.842);
 }
 .each-name {
   width: 50vw;
 }
 .function {
   position: fixed;
-  width: 43vw;
-  height: 19vw;
-  background-color: orange;
+  background-size: contain;
 }
 .function-byFirstName {
+  width: 23vw;
+  height: 23vw;
   top: 40vh;
   left: 0;
+  background-image: url(img/by-first.png);
 }
 .function-byLastName {
+  width: 29vw;
+  height: 29vw;
   right: 0;
-  top: 70vh;
+  bottom: 0;
+  background-image: url(img/by-last.png);
 }
 .function-shuffle {
-  width: 31vw;
-  height: 11vw;
+  width: 13vw;
+  height: 13vw;
   top: 0;
-  left: 53vw;
+  left: 59vw;
+  background-image: url(img/shuffle.png);
 }
 span {
   pointer-events: none;
 }
 .round {
-  width: 3vw;
-  height: 3vw;
+  width: 4vw;
+  height: 4vw;
   border-radius: 50px;
-  background-color: darkgreen;
+  background-color: rgba(22, 150, 90, 0.842);
   position: absolute;
-  bottom: -0.3vw;
+  bottom: -3.7vw;
   display: none;
   cursor: pointer;
 }
 .round:first-of-type {
-  right: 3vw;
-  border: 3px solid darkgreen;
+  right: 4vw;
+  border: 3px solid rgba(22, 150, 90, 0.842);
   background-color: transparent;
 }
 .round:last-of-type {
   right: 0;
-  background-color: darkgreen;
+  background-color: rgba(22, 150, 90, 0.842);
+}
+.shuffle-wrapper {
+  width: 100vw;
+  height: 13vw;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  padding-left: 26vw;
+  font-size: 1.4vw;
 }

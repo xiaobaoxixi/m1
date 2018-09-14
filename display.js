@@ -56,6 +56,7 @@ function checkIfNameLine(m) {
 
 function lineUpLeft() {
   document.querySelector(".list").style.textAlign = "left";
+  document.querySelector(".list").style.paddingLeft = "6vw";
   document
     .querySelectorAll(".list p.each-name")
     .forEach(p => (p.style.marginLeft = "3vw"));
@@ -66,7 +67,7 @@ function centerAlign() {
   //first letter change
 }
 function lineUpLastName() {
-  document.querySelector(".list").style.left = "32vw";
+  document.querySelector(".list").style.left = "28vw";
 
   let allLastNames = document.querySelectorAll(
     ".each-name span:nth-of-type(3)"
@@ -77,7 +78,7 @@ function lineUpLastName() {
   document.querySelector(".list").style.textAlign = "right";
   allLastNames.forEach(item => {
     item.style.left =
-      item.getBoundingClientRect().width - window.innerWidth * 0.25 + "px";
+      item.getBoundingClientRect().width - window.innerWidth * 0.24 + "px";
   });
   allOtherNames.forEach(item => {
     item.style.left =
@@ -85,7 +86,7 @@ function lineUpLastName() {
         item.parentElement.children.length - 2
       ].getBoundingClientRect().width -
       11 -
-      window.innerWidth * 0.25 +
+      window.innerWidth * 0.24 +
       "px"; //  add a 11px gap between last name and the names before to make the line up more apparent
   });
   //first letter change
